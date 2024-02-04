@@ -10,6 +10,7 @@ const Slider = () => {
   const byDateDesc = data?.focus.sort((evtA, evtB) =>
     new Date(evtA.date) < new Date(evtB.date) ? 0 : 1
   );
+  // console.log("test",byDateDesc)
   const nextCard = () => {
     setTimeout(
       () => setIndex(index < byDateDesc.length - 1 ? index + 1 : 0),
@@ -30,7 +31,7 @@ const Slider = () => {
             }`}
           >
             <img src={event.cover} alt="forum" />
-            <div className="SlideCard__descriptionContainer">
+            <div key={event.description} className="SlideCard__descriptionContainer">
               <div className="SlideCard__description">
                 <h3>{event.title}</h3>
                 <p>{event.description}</p>

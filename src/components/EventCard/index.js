@@ -29,21 +29,17 @@ const EventCard = ({
   );
 
 EventCard.propTypes = {
-  imageSrc: PropTypes.string,
+  imageSrc: PropTypes.string.isRequired,
   imageAlt: PropTypes.string,
-  date: PropTypes.instanceOf(Date),
-  title: PropTypes.string,
+  date: PropTypes.instanceOf(Date).isRequired,
+  title: PropTypes.string.isRequired,
   small: PropTypes.bool,
-  label: PropTypes.string,
+  label: PropTypes.string.isRequired,
 };
 
 EventCard.defaultProps = {
-  imageSrc: "/images/stem-list-EVgsAbL51Rk-unsplash.png",
   imageAlt: "image",
   small: false,
-  title: "Conférence #productCON",
-  label: "soirée entreprise",
-  date: new(Date),
 }
 
 export default EventCard;
