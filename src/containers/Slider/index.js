@@ -10,12 +10,13 @@ const Slider = () => {
   const byDateDesc = data?.focus.sort((evtA, evtB) =>
     new Date(evtA.date) < new Date(evtB.date) ? 0 : 1
   );
-  // console.log("test",byDateDesc)
+
   const nextCard = () => {
     setTimeout(
-      () => setIndex(index < byDateDesc.length - 1 ? index + 1 : 0),
+      () => setIndex(index + 1 < byDateDesc.length ? index + 1 : 0),
       5000
-    );
+      );
+      
   };
   useEffect(() => {
     nextCard();
@@ -25,7 +26,7 @@ const Slider = () => {
       {byDateDesc?.map((event, idx) => (
         <>
           <div
-            key={event.title}
+            key={index}
             className={`SlideCard SlideCard--${
               index === idx ? "display" : "hide"
             }`}
