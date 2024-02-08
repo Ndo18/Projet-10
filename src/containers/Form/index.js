@@ -25,7 +25,7 @@ const Form = ({ onSuccess, onError }) => {
     [onSuccess, onError]
   );
   return (
-    <form onSubmit={sendContact}>
+    <form onSubmit={sendContact} onSuccess={onSuccess}>
       <div className="row">
         <div className="col">
           <Field placeholder="" label="Nom" />
